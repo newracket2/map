@@ -53,20 +53,7 @@ function run() {
   let leaderboard = [];
   let prevZoom = 7;
   let refresh = 60;
-  let colors =
-  {
-    "Blacklisted": "#323232",
-    "Paladins United": "#fff0f5",
-    "Imperial": "#990033",
-    "Avicia": "#1010fe",
-    "BuildCraftia": "#09EA2B",
-    "Caeruleum Order": "#012142",
-    "The Simple Ones": "#0fcad6",
-    "Kingdom Foxes": "#ff8800",
-    "Fantasy": "#21c8ec",
-    "Emorians": "#1b5ff1",
-    "House of Sentinels": "#580000"
-  }
+  let colors = { "Blacklisted": "#333333", "Titans Valor": "#e6d8e7", "HackForums": "#9d28c8", "Mystica": "#3a1645", "Celestial Tigers": "#FF4500", "Kingdom Foxes": "#FF8200", "Bobs Torturers": "#7300ff", "Restive": "#0F6868", "Caeruleum Order": "#012142", "The Simple Ones": "#0fcad6", "Lunatic": "#fae600", "Nethers Ascent": "#4a0000", "Paladins United": "#9780bf", "BuildCraftia": "#1CE00B", "Holders of LE": "#28FFC5", "House of Sentinels": "#7F0000", "Imperial": "#990033", "The Hive": "#A550F3", "Audux": "#005FE8", "Emorians": "#005FE8", "IceBlue Team": "#99AAB5", "DiamondDeities": "#42A8C7", "Fantasy": "#21C8EC", "Sins of Seedia": "#6B0B0B", "Avicia": "#1010FE", "Project Ultimatum": "#133E7C", "The Nezaract": "#6cf3ff", "Beyond the Scene": "#99ac01" }
 
   //grabbing options elements
   let slider = document.getElementById("rate-option");
