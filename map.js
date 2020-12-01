@@ -97,17 +97,6 @@ function run() {
     render();
   }
 
-  //sending alert on first visit
-  try {
-    const visited = localStorage.getItem("visited");
-    if (!visited) {
-      alert("If you would like to add your guild's preferences (color and prefix), please contact brokenmotor in-game or through discord at regale#5688. Press any key for the menu. Enjoy!");
-      localStorage.setItem("visited", true);
-    }
-  } catch (e) {
-    console.error(e);
-  }
-
   //setting up territories
   fetch("https://raw.githubusercontent.com/DevScyu/Wynn/master/territories.json")
     .then(response =>
