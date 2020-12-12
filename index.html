@@ -1,54 +1,65 @@
 <!DOCTYPE html>
 <html>
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
-	
-	<title>brokenmotor's war map</title>
 
-	<link rel="stylesheet" type="text/css" href="./map.css"/>
+  <title>brokenmotor's war map</title>
 
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" type="image/x-icon" href="public/favicon/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="./map.css" />
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="public/favicon/favicon.ico" />
 
-    <script src="./map.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+    crossorigin=""></script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="./map.js"></script>
 </head>
-<body onload="run()" onkeyup="toggle()">
-		<div id="info">
-			<span class="info-text menu-text menu-title guild-name">Press any key for Menu & Leaderboards</span>
-		</div>
-		<div id="menu">
-			<div style="margin-left: 5%; max-height:50%">
-				<p class="menu-text menu-title guild-name">Leaderboard</p>
-				<div id="guild-leaderboard" class="menu-text guild-name">
-					<p class="menu-text guild-name">Loading...</p>
-				</div>
-		    </div>
-		    <hr>
-		    <div style="margin-left: 5%">
-		    	<p class="menu-text menu-title guild-name">Options</p>
-			    <div class="slidecontainer">
-  					<input type="range" min="5" max="360" value="60" class="slider" id="rate-option"/>
-  					<span class="menu-text guild-name">Refresh Rate: <span id="rate-display">60</span>s</span>
-				</div>
-				<br>
-				<div>
-					<span class="menu-text guild-name"><input type="checkbox" checked="true" id="territory-toggle"> Territories</span> <br>
-					<span class="menu-text guild-name"><input type="checkbox" checked="false" id="territory-names"> Territory Names</span> <br>
-					<span class="menu-text guild-name"><input type="checkbox" checked="true" id="territory-guilds"> Guild Names</span> <br>
-				</div>
-				
 
-		    </div>
-		    <hr>
-		    <div style="margin-left: 5%">
-		    	<p id="countdown" class="menu-text guild-name">60</p>
-		    </div>	
-		</div>
-		<div id="map"></div>
+<body onload="run()" onkeyup="toggle()">
+  <div id="info">
+    <span class="info-text menu-text menu-title guild-name">Press any key for Menu & Leaderboards</span>
+  </div>
+  <div id="menu">
+    <div style="margin-left: 5%; max-height:50%">
+      <p class="menu-text menu-title guild-name">Leaderboard</p>
+      <div id="guild-leaderboard" class="menu-text guild-name">
+        <p class="menu-text guild-name">Loading...</p>
+      </div>
+    </div>
+    <hr>
+    <div style="margin-left: 5%">
+      <p class="menu-text menu-title guild-name">Options</p>
+      <div class="slidecontainer">
+        <input type="range" min="5" max="360" value="60" class="slider" id="rate-option" />
+        <span class="menu-text guild-name">Refresh Rate: <span id="rate-display">60</span>s</span>
+      </div>
+      <br>
+      <div>
+        <span class="menu-text guild-name"><input type="checkbox" checked="true" id="territory-toggle">
+          Territories</span> <br>
+        <span class="menu-text guild-name"><input type="checkbox" checked="false" id="territory-names"> Territory
+          Names</span> <br>
+        <span class="menu-text guild-name"><input type="checkbox" checked="true" id="territory-guilds"> Guild
+          Names</span> <br>
+      </div>
+
+
+    </div>
+    <hr>
+    <div style="margin-left: 5%">
+      <p id="countdown" class="menu-text guild-name">60</p>
+    </div>
+  </div>
+  <div id="map"></div>
 </body>
+
 </html>

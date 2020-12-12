@@ -6,6 +6,29 @@ function toggle() {
   }
 }
 
+let currentTerrsResources = {
+  "Ahmsord": "wood"
+}
+
+function addResource(terr, resource) {
+  currentTerrsResources[terr] = resource;
+  console.log(currentTerrsResources);
+}
+
+$.get("https://jsonstorage.net/api/items/b5ac6845-2b50-4c63-b8a4-30459e5ae279",
+  function (data, textStatus, jqXHR) {
+    currentTerrsResources = data;
+  });
+
+setInterval(function () {
+  $.ajax({
+    url: "https://jsonstorage.net/api/items/b5ac6845-2b50-4c63-b8a4-30459e5ae279",
+    type: "PUT",
+    data: JSON.stringify(currentTerrsResources),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json"
+  });
+}, 3000)
 
 function run() {
 
@@ -289,7 +312,11 @@ function run() {
 			<div><b>${territory}</b></div>
 			<div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a> [${guilds[guild]["level"]}]</div>
 			<div>Aqcuired on ${guildTerritories[territory]["acquired"]}</div>
-			<div>Held for ${str}.</div>
+      <div>Held for ${str}.</div>
+      <button onclick="addResource('${territory.replace("'", "\\\'").replace('"', '\\\"')}', 'crop')">Crop</button>
+      <button onclick="addResource('${territory.replace("'", "\\\'").replace('"', '\\\"')}', 'ore')">Ore</button>
+      <button onclick="addResource('${territory.replace("'", "\\\'").replace('"', '\\\"')}', 'wood')">Wood</button>
+      <button onclick="addResource('${territory.replace("'", "\\\'").replace('"', '\\\"')}', 'fish')">Fish</button>
 			</div>`);
 
     if (((diff / 1000) < 180) && (!Object.keys(cdRectangles).includes(territory))) {
@@ -301,7 +328,7 @@ function run() {
 			<div><b>${territory}</b></div>
 			<div><a target="_blank" href="https://www.wynndata.tk/stats/guild/${guild}">${guild}</a> [${guilds[guild]["level"]}]</div>
 			<div>Aqcuired on ${guildTerritories[territory]["acquired"]}</div>
-			<div>Held for ${str}.</div>
+      <div>Held for ${str}.</div>
 			</div>`).openPopup();
       cdRectangle.setStyle({
         color: "#FF0000",
